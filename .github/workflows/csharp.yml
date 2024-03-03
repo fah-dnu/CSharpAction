@@ -32,7 +32,6 @@ jobs:
     - name: Restore and build
       run: |
         dotnet build --configuration ${{ matrix.configuration }}
-        pwd
 
     # Upload the compiled artifacts
     - name: Upload build artifacts
@@ -40,4 +39,4 @@ jobs:
       with:
         name: Compiled Artifacts
         path: |
-          D:\a\CSharpAction\CSharpAction\.github
+          D:\a\CSharpAction\CSharpAction
