@@ -30,10 +30,9 @@ jobs:
 
     # Restore dependencies and build the console application
     - name: Restore and build
-      run: dotnet build --configuration ${{ matrix.configuration }}
-      
-    - name: Ruta
-      run: ls -R
+      run: |
+        dotnet build --configuration ${{ matrix.configuration }}
+        pwd
 
     # Upload the compiled artifacts
     - name: Upload build artifacts
