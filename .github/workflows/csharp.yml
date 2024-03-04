@@ -37,6 +37,6 @@ jobs:
     - name: Upload build artifacts
       uses: actions/upload-artifact@v3
       with:
-        name: Compiled Artifacts
+        name: Ejecutables
         path: |
-          D:\a\CSharpAction\CSharpAction\bin\Release\
+          D:\a\CSharpAction\CSharpAction\bin\Release\net8.0\
