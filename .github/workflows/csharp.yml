@@ -1,0 +1,42 @@
+name: Compilación C#
+
+on:
+  push:
+    branches: [ "master" ]
+  pull_request:
+    branches: [ "master" ]
+
+jobs:
+
+  build:
+
+    strategy:
+      matrix:
+        configuration: [Debug, Release]
+
+    runs-on: windows-latest
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v3
+      with:
+        fetch-depth: 0
+
+    # Install the .NET Core workload
+    - name: Install .NET Core
+      uses: actions/setup-dotnet@v3
+      with:
+        dotnet-version: 6.0.x
+
+    # Restore dependencies and build the console application
+    - name: Restore and build
+      run: |
+        dotnet build --configuration ${{ matrix.configuration }}
+
+    # Upload the compiled artifacts
+    - name: Upload build artifacts
+      uses: actions/upload-artifact@v3
+      with:
+        name: Compiled Artifacts
+        path: |
+          D:\a\CSharpAction\CSharpAction
