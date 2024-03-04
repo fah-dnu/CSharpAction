@@ -39,4 +39,4 @@ jobs:
       with:
         name: Compiled Artifacts
         path: |
-          D:\a\CSharpAction\CSharpAction
+          D:\a\CSharpAction\CSharpAction\bin\Release\
