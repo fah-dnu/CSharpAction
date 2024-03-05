@@ -40,3 +40,4 @@ jobs:
         name: Ejecutables
         path: |
           D:\a\CSharpAction\CSharpAction\bin\Release\net8.0\
+          is-public: false
